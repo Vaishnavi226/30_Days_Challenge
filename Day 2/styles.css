@@ -1,10 +1,8 @@
-/* Page background */
 body {
   background-color: #f8f9fa;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Product card images */
 .product-img {
   width: 100%;
   height: 170px;
@@ -12,7 +10,6 @@ body {
   object-position: center;
 }
 
-/* Small images in top products */
 .small-img {
   width: 60px;
   height: 60px;
@@ -20,7 +17,6 @@ body {
   object-position: center;
 }
 
-/* Small product images for horizontal cards */
 .small-product-img {
   width: 100%;
   height: 150px;
@@ -28,17 +24,77 @@ body {
   object-position: center;
 }
 
-/* Ensure all card images fit properly */
 .card-img-top {
   object-fit: cover;
   object-position: center;
 }
 
-/* Price styling */
 .price {
   color: #212529;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
+.product-card-title {
+  font-size: 0.85rem;
+}
+
+.product-card-text {
+  font-size: 0.7rem;
+}
+
+.product-card-date {
+  font-size: 0.65rem;
+}
+
+.product-card-price {
+  font-size: 0.9rem;
+}
+
+.product-card-btn {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 576px) {
+  .product-card-title {
+    font-size: 1rem;
+  }
+  
+  .product-card-text {
+    font-size: 0.82rem;
+  }
+  
+  .product-card-date {
+    font-size: 0.77rem;
+  }
+  
+  .product-card-price {
+    font-size: 1.1rem;
+  }
+  
+  .product-card-btn {
+    font-size: 0.77rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 575px) {  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .product-img {
+    height: 180px;
+  }
+}
 
