@@ -54,7 +54,7 @@ body {
 .btn1 {
   background-color: black;
   color: white;
-  border: 1px solid white;
+  border: none;
 }
 
 .btn2 {
@@ -67,9 +67,10 @@ body {
 .hero {
   width: 100%;
   min-height: calc(100vh - 60px);
-  background-color: black;
+  background-image: url(./WhatsApp\ Image\ 2026-01-20\ at\ 9.52.46\ PM.jpeg);
+  background-size: cover;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px 5%;
 }
