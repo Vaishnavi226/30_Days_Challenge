@@ -1,0 +1,160 @@
+/* Reset and global styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  padding: 15px 5%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  height: 28px;
+}
+
+.logo span {
+  color: orange;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* wrap buttons on small screens */
+}
+
+.btn1,
+.btn2 {
+  min-width: 80px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn1 {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn2 {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 5%;
+}
+
+.hero-content {
+  max-width: 600px;
+  width: 100%;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.herobtn {
+  display: inline-block;
+  height: 45px;
+  width: 100%;
+  max-width: 250px;
+  background-color: rgb(255, 115, 0);
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.para {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.plan {
+  color: rgb(255, 115, 0);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .herobtn {
+    max-width: 200px;
+    font-size: 14px;
+  }
+
+  .para,
+  .plan {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .herobtn {
+    max-width: 160px;
+  }
+
+  .para,
+  .plan {
+    font-size: 12px;
+  }
+}
