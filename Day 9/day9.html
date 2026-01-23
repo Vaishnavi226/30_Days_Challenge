@@ -1,68 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Analytics Dashboard</title>
-<link rel="stylesheet" href="day9.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxton Dashboard Clone</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./day9.css">
 </head>
 <body>
 
-<div class="app">
-
-    <!-- Sidebar -->
+<div class="container">
     <aside class="sidebar">
-        <h2 class="logo">Maxton</h2>
-        <ul>
-            <li class="active">Dashboard</li>
-            <li>Analytics</li>
-            <li>CRM</li>
-            <li>Apps</li>
-            <li>Settings</li>
-        </ul>
+        <div class="logo">
+            <div class="logo-icon"><i class="fa-brands fa-cloudsmith"></i></div>
+            <h2>Maxton</h2>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-category">Dashboard</div>
+            <a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="#"><i class="fa-solid fa-chart-pie"></i> Analysis</a>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i> eCommerce</a>
+            
+            <div class="menu-category">UI Elements</div>
+            <a href="#"><i class="fa-solid fa-layer-group"></i> Widgets</a>
+            <a href="#"><i class="fa-solid fa-cubes"></i> Apps</a>
+            <a href="#"><i class="fa-regular fa-credit-card"></i> Cards</a>
+            <a href="#"><i class="fa-solid fa-table-columns"></i> Tables</a>
+
+            <div class="menu-category">Pages</div>
+            <a href="#"><i class="fa-solid fa-lock"></i> Authentication</a>
+            <a href="#"><i class="fa-regular fa-user"></i> User Profile</a>
+        </nav>
     </aside>
 
-    <!-- Main -->
-    <main class="main">
+    <main class="main-content">
+        <header>
+            <div class="toggle-btn"><i class="fa-solid fa-bars"></i></div>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="header-icons">
+                <img src="https://flagcdn.com/w40/us.png" alt="US Flag" class="flag">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-table-cells"></i>
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge">5</span>
+                </div>
+                <img src="https://i.pravatar.cc/150?img=32" alt="User" class="profile-pic">
+            </div>
+        </header>
 
-        <!-- Topbar -->
-        <div class="topbar">
-            <input type="text" placeholder="Search">
-            <div class="user">John Anderson</div>
+        <div class="dashboard-grid">
+            
+            <div class="card welcome-card">
+                <div class="welcome-text">
+                    <p>Welcome back</p>
+                    <h3>Jhon Anderson!</h3>
+                    <div class="stats-row">
+                        <div>
+                            <h2>$65.4K</h2>
+                            <p>Today's Sales</p>
+                        </div>
+                        <div>
+                            <h2>78.4%</h2>
+                            <p>Growth Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-img">
+                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/man-working-on-laptop-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--computer-desk-office-business-illustrations-3347575.png" alt="Illustration">
+                </div>
+            </div>
+
+            <div class="card stat-card">
+                <div class="card-header">
+                    <div>
+                        <h3>42.5K</h3>
+                        <p>Active Users</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="donut-chart-container">
+                    <div class="donut-chart" style="--p:78; --c:#ffc107; --b:10px;">
+                        <span>78%</span>
+                    </div>
+                </div>
+                <p class="subtext">24K users increased from last month</p>
+            </div>
+
+            <div class="card stat-card">
+                <div class="card-header">
+                    <div>
+                        <h3>97.4K</h3>
+                        <p>Total Users</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="line-chart-simple">
+                     <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                        <path d="M0,30 Q10,25 20,30 T40,20 T60,25 T80,10 T100,20" fill="none" stroke="#00d25b" stroke-width="2"/>
+                    </svg>
+                </div>
+                <p class="subtext"><span class="green">12.5%</span> from last month</p>
+            </div>
+
+            <div class="card large-card">
+                <div class="card-header">
+                    <h3>Monthly Revenue</h3>
+                </div>
+                <div class="bar-chart">
+                    <div class="bar" style="height: 30%"></div>
+                    <div class="bar" style="height: 50%"></div>
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar highlight" style="height: 70%"></div>
+                    <div class="bar" style="height: 45%"></div>
+                    <div class="bar" style="height: 30%"></div>
+                    <div class="bar" style="height: 55%"></div>
+                    <div class="bar" style="height: 80%"></div>
+                    <div class="bar" style="height: 20%"></div>
+                    <div class="bar" style="height: 60%"></div>
+                </div>
+                <div class="chart-labels">
+                    <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+                </div>
+                <div class="revenue-summary">
+                    <h2>68.9%</h2>
+                    <span class="green">34.5% <i class="fa-solid fa-arrow-up"></i></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Device Type</h3>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="donut-large-container">
+                     <div class="multi-donut">
+                         <div class="inner-text">
+                             <h2>68%</h2>
+                             <p>Total Views</p>
+                         </div>
+                     </div>
+                </div>
+                <ul class="legend">
+                    <li><span class="dot blue"></span> Desktop <span class="val">35%</span></li>
+                    <li><span class="dot pink"></span> Tablet <span class="val">48%</span></li>
+                    <li><span class="dot green"></span> Mobile <span class="val">27%</span></li>
+                </ul>
+            </div>
+
+            <div class="card stat-card">
+                <div class="card-header">
+                    <div>
+                        <h3>82.7K</h3>
+                        <p>Total Clicks</p>
+                    </div>
+                     <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="bar-chart-simple">
+                     <div class="bar-s" style="height:30%"></div>
+                     <div class="bar-s" style="height:50%"></div>
+                     <div class="bar-s" style="height:70%"></div>
+                     <div class="bar-s" style="height:40%"></div>
+                     <div class="bar-s" style="height:90%"></div>
+                     <div class="bar-s" style="height:60%"></div>
+                </div>
+                <p class="subtext"><span class="green">12.5%</span> from last month</p>
+            </div>
+
+             <div class="card stat-card">
+                <div class="card-header">
+                    <div>
+                        <h3>68.4K</h3>
+                        <p>Total Views</p>
+                    </div>
+                     <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="line-chart-simple">
+                     <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                        <path d="M0,35 Q20,10 40,25 T60,10 T80,30 T100,5" fill="none" stroke="#fc424a" stroke-width="2"/>
+                        <circle cx="20" cy="18" r="1.5" fill="#fc424a" />
+                         <circle cx="60" cy="10" r="1.5" fill="#fc424a" />
+                         <circle cx="100" cy="5" r="1.5" fill="#fc424a" />
+                    </svg>
+                </div>
+                <p class="subtext">35K users increased</p>
+            </div>
+            
+             <div class="card campaign-card">
+                 <div class="card-header">
+                    <h3>Campaign Stats</h3>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="campaign-list">
+                    <div class="camp-item">
+                        <div class="icon pink"><i class="fa-solid fa-calendar"></i></div>
+                        <div class="info"><span>Campaigns</span></div>
+                        <div class="val">54 <span class="green">24%</span></div>
+                    </div>
+                     <div class="camp-item" style="opacity:0.5"></div>
+                     <div class="camp-item" style="opacity:0.3"></div>
+                </div>
+             </div>
+             
+              <div class="card">
+                  <div class="card-header">
+                     <h3>85,247 <span class="green">+23.7%</span></h3>
+                     <p>Total Accounts</p>
+                  </div>
+                   <div class="wave-chart">
+                        <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                             <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffab00;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ffab00;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M0,30 L0,20 Q25,5 50,20 T100,10 L100,30 Z" fill="url(#grad1)" stroke="#ffab00" stroke-width="1"/>
+                        </svg>
+                   </div>
+              </div>
         </div>
-
-        <!-- Grid -->
-        <div class="grid">
-
-            <!-- 1 -->
-            <div class="card welcome span-2">
-                <h3>Welcome Back 👋</h3>
-                <p>$65.4K Revenue</p>
-            </div>
-
-            <!-- 2 -->
-            <div class="card">
-                <h4>Visitors</h4>
-                <h2>42.5K</h2>
-            </div>
-
-            <!-- 3 -->
-            <div class="card">
-                <h4>Total Sales</h4>
-                <h2>97.4K</h2>
-            </div>
-
-            <!-- 4 -->
-            <div class="card">
-                <h4>Growth</h4>
-                <h2>78%</h2>
-            </div>
-
-           
-
-        </div>
-
     </main>
-
 </div>
 
 </body>
