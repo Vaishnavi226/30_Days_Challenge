@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kodee UI</title>
+<style>
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+    background:#eef1f5;
+    min-height:100vh;
+}
+
+/* Container */
+.container{
+    position:relative;
+}
+
+/* Image Section */
+.image-box{
+    position:relative;
+}
+
+.person{
+    width:380px;
+    height:540px;
+    object-fit:cover;
+    border-radius:22px;
+}
+
+/* Slim Input Box */
+.input-box{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    background:white;
+    padding:6px 12px;
+    border-radius:12px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    height:42px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.15);
+}
+
+.input-box input{
+    width:260px;
+    height:22px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:13px;
+    padding:2px 8px;
+    outline:none;
+}
+
+.input-box button{
+    background:linear-gradient(135deg,#7c3aed,#4f46e5);
+    color:white;
+    border:none;
+    padding:4px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:12px;
+    height:24px;
+}
+
+/* Ask Button */
+.chat-btn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:linear-gradient(135deg,#6d28d9,#4f46e5);
+    color:white;
+    padding:14px 24px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:15px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* Chat Popup */
+.chat-popup{
+    position:fixed;
+    inset:0;
+    margin:auto;
+    max-width:560px;
+    width:90%;
+    max-height:650px;
+    height:90%;
+    background:#ffffff;
+    border-radius:26px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.35);
+    display:none;
+    flex-direction:column;
+    z-index:999;
+    animation:popup 0.35s ease;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(0.9);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* Header */
+.chat-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 24px;
+    background:linear-gradient(135deg,#6d28d9,#4f46e5);
+    color:white;
+    border-radius:26px 26px 0 0;
+    font-size:20px;
+}
+
+.chat-header button{
+    background:none;
+    border:none;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* Chat Body */
+.chat-body{
+    padding:16px;
+    flex:1;
+    overflow-y:auto;
+}
+
+.chat-body h3{
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+.chat-body p{
+    font-size:15px;
+    color:#555;
+    margin-bottom:10px;
+}
+
+.suggestion{
+    margin-top:16px;
+    background:#f1f5f9;
+    padding:14px 16px;
+    border-radius:14px;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.25s;
+    border:1px solid #e5e7eb;
+}
+
+.suggestion:hover{
+    background:#e0e7ff;
+    transform:translateY(-2px);
+}
+
+/* Chat Messages */
+.message{
+    background:#e0e7ff;
+    padding:10px 14px;
+    border-radius:14px;
+    margin-bottom:8px;
+    max-width:80%;
+    word-wrap:break-word;
+}
+
+.message.user{
+    background:#7c3aed;
+    color:white;
+    align-self:flex-end;
+}
+
+/* Input Section */
+.chat-input{
+    display:flex;
+    padding:16px;
+    border-top:1px solid #e5e7eb;
+    gap:12px;
+}
+
+.chat-input input{
+    flex:1;
+    padding:14px 16px;
+    border-radius:14px;
+    border:1px solid #d1d5db;
+    outline:none;
+    font-size:16px;
+}
+
+.chat-input button{
+    background:linear-gradient(135deg,#7c3aed,#4f46e5);
+    color:white;
+    border:none;
+    padding:14px 22px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* Footer */
+.footer-text{
+    font-size:12px;
+    text-align:center;
+    padding:10px;
+    color:#6b7280;
+}
+
+/* Responsive */
+@media screen and (max-width:768px){
+    .person{
+        width:250px;
+        height:350px;
+    }
+    .input-box{
+        left:10px;
+        bottom:10px;
+        width:90%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Image Section -->
+    <div class="image-box">
+        <img src="https://via.placeholder.com/380x540.png?text=Person" class="person">
+    </div>
+
+    <!-- Slim Input Section -->
+    <div class="input-box">
+        <input type="text" id="miniInput" placeholder='Create a logo for my blog "Bakery hunter".'>
+        <button id="miniBtn">Generate</button>
+    </div>
+
+    <!-- Chat Popup -->
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-header">
+            <span>Kodee</span>
+            <button onclick="closeChat()">✖</button>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <h3>Hello 👋</h3>
+            <p>How can I help you today?</p>
+
+            <div class="suggestion">↗ I need help choosing the right hosting plan</div>
+            <div class="suggestion">↗ I want to migrate to Hostinger</div>
+            <div class="suggestion">↗ I want to create a website</div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="msg" placeholder="Type message...">
+            <button onclick="sendMsg()">➤</button>
+        </div>
+
+        <small class="footer-text">Kodee can make mistakes. Double-check replies.</small>
+    </div>
+
+</div>
+
+<!-- Ask Button -->
+<div class="chat-btn" onclick="openChat()">⚡ Ask Kodee</div>
+
+<script>
+// Open chat
+function openChat(){
+    document.getElementById("chatPopup").style.display = "flex";
+}
+
+// Close chat
+function closeChat(){
+    document.getElementById("chatPopup").style.display = "none";
+}
+
+// Send user message
+function sendMsg(){
+    let msgInput = document.getElementById("msg");
+    let msg = msgInput.value.trim();
+
+    if(msg !== ""){
+        let msgDiv = document.createElement("div");
+        msgDiv.classList.add("message", "user");
+        msgDiv.innerText = msg;
+
+        let chatBody = document.getElementById("chatBody");
+        chatBody.appendChild(msgDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        msgInput.value = "";
+
+        // Bot reply
+        setTimeout(()=>{
+            let botMsg = document.createElement("div");
+            botMsg.classList.add("message");
+            botMsg.innerText = "I am here to assist you! 🤖";
+            chatBody.appendChild(botMsg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }, 800);
+    }
+}
+
+// Send message on Enter key
+document.getElementById("msg").addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        sendMsg();
+    }
+});
+
+// Suggestion clicks
+document.querySelectorAll(".suggestion").forEach(item => {
+    item.addEventListener("click", function(){
+        document.getElementById("msg").value = this.innerText.replace("↗ ", "");
+        sendMsg();
+    });
+});
+
+// Mini input box generates chat
+document.getElementById("miniBtn").addEventListener("click", function(){
+    let miniVal = document.getElementById("miniInput").value.trim();
+    if(miniVal !== ""){
+        openChat();
+        document.getElementById("msg").value = miniVal;
+        sendMsg();
+        document.getElementById("miniInput").value = "";
+    }
+});
+</script>
+
+</body>
+</html>
