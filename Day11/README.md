@@ -3,7 +3,6 @@
 This project is a **Tesla-inspired Mega Menu UI** built with **HTML, CSS, and JavaScript**.  
 It features a responsive navbar with dropdown mega menus, images for each section, and right-aligned icons similar to Tesla.com.
 
----
 
 ## **Features**
 
@@ -15,7 +14,6 @@ It features a responsive navbar with dropdown mega menus, images for each sectio
 - **Smooth Hover Effects**: Mega menus appear with a slide/fade effect.
 - **Side Links**: Some mega menus have additional side links for quick actions (e.g., Demo Drive, Compare).
 
----
 
 
 
