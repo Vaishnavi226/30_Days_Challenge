@@ -15,5 +15,18 @@ It features a responsive navbar with dropdown mega menus, images for each sectio
 - **Side Links**: Some mega menus have additional side links for quick actions (e.g., Demo Drive, Compare).
 
 
+# Technologies Used
+HTML5
+CSS3 (Flexbox, Grid, Responsive design)
+JavaScript (DOM manipulation for mega menu interactions)
+
+
+# Future Enhancements
+Add slide + fade animation to make mega menus appear smoother.
+Add clickable dropdown for mobile screens.
+Integrate real links to Tesla pages or custom pages.
+Add dark/light mode toggle.
+
+
 
 
