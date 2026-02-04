@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRCTC Air - Book Flight Tickets Online</title>
+    <link rel="stylesheet" href="./day21.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <div class="logo-section">
+          <img
+            src="https://www.air.irctc.co.in/assets/img/irctc-logo.webp"
+            alt="IRCTC Logo"
+            class="irctc-logo"
+          />
+          <div class="logo-text">
+            <span class="main-title">Indian Railway Catering and</span>
+            <span class="main-title">Tourism Corporation Limited</span>
+            <span class="sub-title">A Government of India Enterprise</span>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="#" class="nav-link"
+            >User Registration <i class="fas fa-caret-down"></i
+          ></a>
+          <a href="#" class="nav-link"
+            >Contact Us <i class="fas fa-caret-down"></i
+          ></a>
+          <a href="#" class="nav-link">Login</a>
+        </nav>
+        <div class="air-logo">
+          <img
+            src="https://www.air.irctc.co.in/assets/img/air-logo.webp"
+            alt="IRCTC Air"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Background -->
+    <section class="hero-section">
+      <img
+        src="./aeroplaneeeeeeee.jpg"
+        alt="Airport Background"
+        class="hero-bg"
+      />
+
+      <!-- PM Shri Announcement -->
+      <div class="pm-shri-banner">
+        <a href="#">PM Shri Paryatan Vayu Sewa (Madhya Pradesh)</a>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-container">
+        <div class="trip-options">
+          <button class="trip-btn active" id="oneWayBtn">One Way</button>
+          <button class="trip-btn" id="roundTripBtn">Round Trip</button>
+          <div class="fare-options">
+            <label><input type="checkbox" name="defence" /> Defence Fare</label>
+            <label class="highlight"
+              ><input type="checkbox" name="govt" /> Govt Employee/LTC</label
+            >
+            <label
+              ><input type="checkbox" name="senior" /> Senior Citizen</label
+            >
+            <label><input type="checkbox" name="student" /> Student</label>
+          </div>
+        </div>
+
+        <div class="search-fields">
+          <div class="field-group">
+            <label>Origin</label>
+            <input type="text" placeholder="Enter City" />
+          </div>
+          <button class="swap-btn"><i class="fas fa-exchange-alt"></i></button>
+          <div class="field-group">
+            <label>Destination</label>
+            <input type="text" placeholder="Enter City" />
+          </div>
+          <div class="field-group">
+            <label>Departure</label>
+            <input type="date" id="departure" />
+          </div>
+          <div class="field-group">
+            <label>Return</label>
+            <input type="date" id="return" disabled />
+          </div>
+          <div class="field-group">
+            <label>Traveller(s) & Class</label>
+            <select>
+              <option>1 Traveller(s), Economy</option>
+              <option>2 Traveller(s), Economy</option>
+              <option>1 Traveller(s), Business</option>
+            </select>
+          </div>
+          <button class="search-btn">
+            Search <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <p class="govt-warning">
+          Government Employees are mandated to book air tickets under the
+          'Government Employee/LTC' tab ONLY for Official or LTC travel where
+          the Government of India bears the cost as per the GOI guidelines.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Banner Slider -->
+    <section class="main-banner">
+      <div class="banner-slider">
+        <div class="banner-slide active">
+          <img
+            src="https://www.irctctourism.co.in/air/banner/home-7.gif"
+            alt="Heritage Rails"
+          />
+        </div>
+        <div class="banner-slide">
+          <img
+            src="https://www.irctctourism.co.in/air/banner/home-9.gif"
+            alt="Promo Banner 2"
+          />
+        </div>
+        <div class="banner-slide">
+          <img
+            src="https://www.irctctourism.co.in/air/banner/home-2.gif"
+            alt="Promo Banner 3"
+          />
+        </div>
+        <div class="banner-slide">
+          <img
+            src="https://www.irctctourism.co.in/air/banner/home.gif"
+            alt="Promo Banner 4"
+          />
+        </div>
+        <div class="banner-slide">
+          <img
+            src="https://www.irctctourism.co.in/air/banner/home-1.gif"
+            alt="Promo Banner 1"
+          />
+        </div>
+        <button class="slider-btn prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="slider-dots"></div>
+      </div>
+    </section>
+
+    <!-- Promo Cards -->
+    <section class="promo-cards">
+      <div class="promo-card">
+        <img
+          src="https://www.irctctourism.co.in/air/banner/home-7.gif"
+          alt="Celebrating 7 Years"
+        />
+      </div>
+      <div class="promo-card">
+        <img
+          src="https://www.irctctourism.co.in/air/banner/home-2.gif"
+          alt="Delhi London"
+        />
+      </div>
+      <div class="promo-card">
+        <img
+          src="https://www.irctctourism.co.in/air/banner/home.gif"
+          alt="Air India"
+        />
+      </div>
+      <div class="promo-card">
+        <img
+          src="https://www.irctctourism.co.in/air/banner/home-1.gif"
+          alt="New Year"
+        />
+      </div>
+    </section>
+
+    <!-- Services Icons -->
+    <section class="services-section">
+      <div class="services-container">
+        <div class="service-item active">
+          <div class="service-icon"><i class="fas fa-plane"></i></div>
+          <span>Flights</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-hotel"></i></div>
+          <span>Hotels</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-bus"></i></div>
+          <span>Bus Tickets</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-bed"></i></div>
+          <span>Retiring Room</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <span>Lounge</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">
+            <i class="fas fa-suitcase-rolling"></i>
+          </div>
+          <span>Tour Packages</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-flag"></i></div>
+          <span>Bharat Gaurav</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-om"></i></div>
+          <span>Buddhist Train</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-crown"></i></div>
+          <span>Maharajas'</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-train"></i></div>
+          <span>Golden Chariot</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-ship"></i></div>
+          <span>Ferry</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-helicopter"></i></div>
+          <span>Heli Yatra</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-tag"></i></div>
+          <span>TAG</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-hiking"></i></div>
+          <span>Trek</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <h2 class="faq-title">FAQ</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Which site is cheapest for flight tickets?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              IRCTC Air offers competitive prices for domestic and international
+              flights with exclusive discounts for government employees.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How to book flight ticket?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Select your origin and destination, choose dates, select
+              travelers, search for flights and complete booking.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do I check flight seat availability?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Enter your travel details in the search form and view available
+              flights with seat availability.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How to get a low fare air ticket?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Book in advance, be flexible with dates, and check for special
+              offers and discounts.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do I book air tickets?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Use our simple search form, compare prices, and complete your
+              booking securely online.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span
+                >How can I get the lowest international flight tickets?</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Compare prices, book early, and look for seasonal offers on
+              international routes.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What does air ticket reservation mean?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Air ticket reservation means booking a seat on a flight for a
+              specific date and route.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Is it worth booking flights online?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Yes, online booking offers convenience, better prices, and easy
+              comparison of flights.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="app-section">
+      <div class="app-container">
+        <div class="phone-mockup">
+          <img
+            src="https://www.bus.irctc.co.in/assets/img/frame-2.png"
+            alt="Phone Frame"
+            class="phone-frame"
+          />
+          <img
+            src="https://www.bus.irctc.co.in/assets/img/app.png"
+            alt="App Screen"
+            class="phone-screen"
+          />
+        </div>
+        <div class="app-content">
+          <h2>Your journey, Just a Tap Away</h2>
+          <p>Flights, Hotels and Travel Packages at your fingertips</p>
+          <div class="app-badges">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+              alt="App Store"
+            />
+          </div>
+          <div class="app-rating">
+            <span>4.1</span>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="qr-section">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.irctc.co.in"
+            alt="QR Code"
+          />
+          <p>Scan QR Code to<br />download the App</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Retiring Rooms</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Tour Packages</a></li>
+            <li><a href="#">Lounge</a></li>
+            <li><a href="#">Ferry</a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">E-Catering</a></li>
+            <li><a href="#">E-Ticketing</a></li>
+            <li><a href="#">Empanelment for PAD items for Catering</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Popular Domestic Routes In India</h3>
+          <ul>
+            <li><a href="#">Delhi to Mumbai Flights</a></li>
+            <li><a href="#">Mumbai to Delhi Flights</a></li>
+            <li><a href="#">Bangalore to Delhi Flights</a></li>
+            <li><a href="#">Delhi to Goa Flights</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Popular International Routes In India</h3>
+          <ul>
+            <li><a href="#">Mumbai to Dubai Flights</a></li>
+            <li><a href="#">Mumbai to Singapore Flights</a></li>
+            <li><a href="#">Delhi to Dubai Flights</a></li>
+            <li><a href="#">Delhi to Singapore Flights</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Blog Check</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="useful-links">
+        <h3>Useful Link</h3>
+        <div class="links-cloud">
+          <a href="#">Air Ticket From Ranchi to Guwahati</a>
+          <a href="#">Cheap Flights To Maldives</a>
+          <a href="#">Delhi To Helsinki Flights Daily Departure</a>
+          <a href="#">Jaipur Flight Tickets</a>
+          <a href="#">Air Tickeet Varanasi to Guwahati</a>
+          <a href="#">International Flights To Dubai</a>
+          <a href="#">Ahmedabad To UK Flight</a>
+          <a href="#">International Flight Delhi To Dubai</a>
+          <a href="#">Varanasi To Jaipur Air Ticket</a>
+          <a href="#">Air Ticket Booking Kannur</a>
+          <a href="#">Ranchi To Patna Air Ticket Price</a>
+          <a href="#">International Flights From Delhi To Canada</a>
+          <a href="#">Delhi To Bangalore Flight</a>
+          <a href="#">Ahmedabad Airport To Statue Of Unity</a>
+          <a href="#">Flights To Abu Dhabi</a>
+          <a href="#">Air Ticket Chandigarh To Shirdi</a>
+          <a href="#">Air Ticket From Kannur To Srinagar</a>
+          <a href="#">Air Ticket From Ranchi To Bhopal</a>
+          <a href="#">Air Ticket Surat To Varanasi Price</a>
+          <a href="#">Flight Tickets To Malaysia</a>
+          <a href="#">Ranchi To Nepal Flight</a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="social-links">
+          <span>Get Connected with us on social networks</span>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tumblr"></i></a>
+          </div>
+        </div>
+        <div class="download-section">
+          <span>Book Hotels on the go. Download our mobile Apps</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="Google Play"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+            alt="App Store"
+          />
+        </div>
+        <div class="partners">
+          <span>Air Ticketing Agents</span>
+          <img
+            src="https://www.air.irctc.co.in/assets/img/irctc-logo.webp"
+            alt="IRCTC"
+            class="partner-logo"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <!-- Feedback Button -->
+    <div class="feedback-btn">
+      <span>Feedback</span>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
