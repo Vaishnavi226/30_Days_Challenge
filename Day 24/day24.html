@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRCTC - Review Journey</title>
+    <link rel="stylesheet" href="day24.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <div class="top-left">
+          <div class="irctc-logo">
+            <img
+              src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png"
+              alt="Indian Railways"
+            />
+          </div>
+        </div>
+        <div class="top-center">
+          <span class="welcome-text"
+            >Welcome Howdy Shivnarh Mosse (Shivnarh@23) &nbsp; | &nbsp;
+            09-Feb-2026 [19:45:12] &nbsp; | &nbsp; A- &nbsp; A &nbsp; A+ &nbsp;
+            | &nbsp; <i class="fas fa-moon"></i> &nbsp; 50</span
+          >
+        </div>
+        <div class="top-right">
+          <div class="irctc-logo-right">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/IRCTC_Logo.svg/1200px-IRCTC_Logo.svg.png"
+              alt="IRCTC"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">MY ACCOUNT</a></li>
+        <li><a href="#" class="active-nav">TRAINS</a></li>
+        <li><a href="#" class="upi-link">Gpay UPI Cashback</a></li>
+        <li><a href="#">E-WALLET</a></li>
+        <li><a href="#">ALERTS</a></li>
+        <li><a href="#">BUSES</a></li>
+        <li><a href="#">FLIGHTS</a></li>
+        <li><a href="#">HOTELS</a></li>
+        <li><a href="#">HOLIDAYS</a></li>
+        <li><a href="#">MEALS</a></li>
+        <li><a href="#">PROMOTIONS</a></li>
+        <li><a href="#">MORE</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+      <div class="banner-img">
+        <img
+          src="https://via.placeholder.com/800x80/FFD700/333?text=Railway+Booking+Banner"
+          alt="Banner"
+        />
+      </div>
+    </div>
+
+    <!-- Progress Stepper -->
+    <div class="stepper-container">
+      <div class="stepper">
+        <div class="step completed">
+          <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+          <span class="step-label">Passenger Details</span>
+        </div>
+        <div class="step-line completed-line"></div>
+        <div class="step active-step">
+          <div class="step-icon"><i class="fas fa-dot-circle"></i></div>
+          <span class="step-label">Review Journey</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-icon"><i class="fas fa-circle"></i></div>
+          <span class="step-label">Payment</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="content-left">
+        <!-- Train Info Section -->
+        <div class="train-info-card">
+          <div class="train-header">
+            <h3>GITANJALI EXP (12859)</h3>
+            <span class="quota-badge">RAC TQWL#2 AS</span>
+          </div>
+          <div class="journey-details">
+            <div class="station departure">
+              <div class="time">06:05</div>
+              <div class="station-name">C SHIVAJI MAH T</div>
+              <div class="date">Fri, 13 Apr</div>
+            </div>
+            <div class="journey-line">
+              <div class="line-with-arrow">
+                <span class="dot"></span>
+                <span class="dash-line"></span>
+                <span class="duration">21:30</span>
+                <span class="dash-line"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+            <div class="station arrival">
+              <div class="time">11:03</div>
+              <div class="station-name">HOWRAH JN</div>
+              <div class="date">Sat, 11 Apr</div>
+            </div>
+          </div>
+          <div class="coach-info">
+            1 Adult | Sleeper (SL) | General | Boarding at C Shivaji Mah T |
+            Boarding Date: 10 Apr 2026 06:05
+          </div>
+          <div class="irctc-notice">
+            Please check IRCTC website or NTES app for actual time before
+            boarding.
+          </div>
+        </div>
+
+        <!-- Passenger Details -->
+        <div class="passenger-card">
+          <div class="card-header">
+            <h3>Passenger Details</h3>
+            <i class="fas fa-chevron-up"></i>
+          </div>
+          <div class="passenger-list">
+            <div class="passenger-row">
+              <span class="passenger-num">1</span>
+              <span class="passenger-name">SHIVKORI DHOLANAT</span>
+              <span class="passenger-age"
+                >23 yrs | 04 Sep 2002 | Male | India | Aadhaar Verified</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          Your ticket will be sent to sh*****t@gmail.com / 98*****90
+        </div>
+
+        <!-- CAPTCHA Section -->
+        <div class="captcha-section">
+          <div class="captcha-banner">
+            <div class="captcha-ad">
+              <img
+                src="https://via.placeholder.com/200x150/1a237e/fff?text=IRCTC+Bus+Booking+Portal"
+                alt="IRCTC Ad"
+              />
+            </div>
+          </div>
+          <div class="captcha-box">
+            <div class="captcha-display">
+              <span class="captcha-text" id="captchaText">fmEBK</span>
+              <button class="captcha-refresh" id="refreshCaptcha">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+            <input
+              type="text"
+              id="captchaInput"
+              placeholder="Enter Captcha"
+              class="captcha-input"
+            />
+          </div>
+          <div class="cancellation-link">
+            <a href="#">View Cancellation Policy</a>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button class="btn-back">Back</button>
+          <button class="btn-continue" id="continueBtn">Continue</button>
+        </div>
+      </div>
+
+      <!-- Fare Summary Sidebar -->
+      <div class="content-right">
+        <div class="fare-summary-card">
+          <div class="fare-header">
+            <h3>Fare Summary</h3>
+          </div>
+          <div class="fare-details">
+            <div class="fare-row">
+              <span>Ticket Fare</span>
+              <span>&#8377; 1,590.00</span>
+            </div>
+            <div class="fare-row">
+              <span>Convenience Fee (incl. of GST)</span>
+              <span>&#8377; 11.80</span>
+            </div>
+            <div class="fare-row">
+              <span>Travel Insurance (incl. of GST)</span>
+              <span>&#8377; 0.45</span>
+            </div>
+            <div class="fare-total">
+              <span>Total Fare</span>
+              <span>&#8377; 1,602.25</span>
+            </div>
+          </div>
+          <div class="pm-banner">
+            <img
+              src="https://via.placeholder.com/200x250/f5f5f5/333?text=Gov+India+Banner"
+              alt="Government Banner"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
