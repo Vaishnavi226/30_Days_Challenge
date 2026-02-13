@@ -1,6 +1,7 @@
 # IRCTC eWallet Deposit Redesign
 
 This project is a simple UI redesign of the **IRCTC eWallet Deposit Page** using **HTML, CSS, and JavaScript**.
+
 It contains:
 
 - Deposit amount inputs
@@ -8,7 +9,7 @@ It contains:
 - Payment method sidebar tabs
 - Dynamic tab switching using JavaScript
 
-## Features
+## 📌 Features
 
 Clean IRCTC-style UI layout  
  Responsive design (works on mobile + desktop)  
