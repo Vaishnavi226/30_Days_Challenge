@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tesla Mega Menu UI</title>
+<link rel="stylesheet" href="./day11.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">TESLA</div>
+
+    <nav>
+        <ul>
+            <li onmouseenter="openMenu('vehicles')">Vehicles</li>
+            <li onmouseenter="openMenu('energy')">Energy</li>
+            <li onmouseenter="openMenu('charging')">Charging</li>
+            <li onmouseenter="openMenu('discover')">Discover</li>
+            <li onmouseenter="openMenu('shop')">Shop</li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <span>?</span>
+        <span>🌐</span>
+        <span>👤</span>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" onmouseenter="closeMenu()">
+    <div>
+        <h1>Model Y</h1>
+        <p>0% APR Available</p>
+    </div>
+</section>
+
+<!-- VEHICLES -->
+<div class="mega" id="vehicles">
+    <div class="grid">
+        <div class="card"><img src="./model s.jpeg"><h3>Model S</h3></div>
+        <div class="card"><img src="./model s.jpeg"><h3>Model 3</h3></div>
+        <div class="card"><img src="./MODEL X.jpeg"><h3>Model X</h3></div>
+        <div class="card"><img src="./MODEL Y.webp"><h3>Model Y</h3></div>
+    </div>
+    <div class="side">
+        <a href="#">Demo Drive</a>
+        <a href="#">Trade-In</a>
+        <a href="#">Compare</a>
+        <a href="#">Help Me Choose</a>
+    </div>
+</div>
+
+<!-- ENERGY -->
+<div class="mega" id="energy">
+    <div class="grid">
+        <div class="card"><img src="./SOLAR PANEL.jpeg"><h3>Solar Panels</h3></div>
+        <div class="card"><img src="./SOLAR ROOF.jpeg"><h3>Solar Roof</h3></div>
+        <div class="card"><img src="./POERWALL.jpeg"><h3>Powerwall</h3></div>
+        <div class="card"><img src="./MEGA PACK.jpeg"><h3>Megapack</h3></div>
+    </div>
+</div>
+
+<!-- CHARGING -->
+<div class="mega" id="charging">
+    <div class="grid">
+        <div class="card"><img src="./HOME CHRGING.jpeg"><h3>Home Charging</h3></div>
+        <div class="card"><img src="./SUPER CGARING.jpeg"><h3>Supercharging</h3></div>
+        <div class="card"><img src="./wall_connector_home_installation.jpg"><h3>Wall Connector</h3></div>
+        <div class="card"><img src="./ADAPTOR.jpeg"><h3>Adapters</h3></div>
+    </div>
+</div>
+
+<!-- DISCOVER -->
+<div class="mega" id="discover">
+    <div class="grid footer-grid">
+        <div>
+            <h3>Resources</h3>
+            <p>Demo Drive</p>
+            <p>Insurance</p>
+            <p>Video Guides</p>
+        </div>
+        <div>
+            <h3>Location</h3>
+            <p>Find Us</p>
+            <p>Charging Map</p>
+        </div>
+        <div>
+            <h3>Company</h3>
+            <p>About</p>
+            <p>Careers</p>
+        </div>
+    </div>
+</div>
+
+<!-- SHOP -->
+<div class="mega" id="shop">
+    <div class="grid">
+        <div class="card"><img src="./ACC.jpeg"><h3>Accessories</h3></div>
+        <div class="card"><img src="./APPERAL.webp"><h3>Apparel</h3></div>
+        <div class="card"><img src="./CHARGING.jpeg"><h3>Charging</h3></div>
+        <div class="card"><img src="./LIFESTLE.jpeg"><h3>Lifestyle</h3></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

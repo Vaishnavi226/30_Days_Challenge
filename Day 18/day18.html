@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRCTC Next Generation eTicketing System</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./day18.css" />
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <span id="datetime">30-Jan-2026 [22:30:51]</span>
+        <span>|</span>
+        <div class="controls">
+          <a href="#">A-</a>
+          <a href="#">A</a>
+          <a href="#">A+</a>
+        </div>
+        <span>|</span>
+        <a
+          href="#"
+          style="text-decoration: none; color: black; font-weight: bold"
+          >हिंदी</a
+        >
+      </div>
+
+      <nav class="main-nav">
+        <div class="logo-left">
+          <img
+            src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png"
+            alt="Indian Railways"
+          />
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#" class="btn-login">LOGIN / REGISTER</a></li>
+          <li><a href="#" class="active-link">TRAINS</a></li>
+          <li><a href="#">E-WALLET</a></li>
+          <li><a href="#">ALERTS</a></li>
+          <li><a href="#">BUSES</a></li>
+          <li><a href="#">FLIGHTS</a></li>
+          <li><a href="#">HOTELS</a></li>
+          <li><a href="#">HOLIDAYS</a></li>
+          <li><a href="#">MEALS</a></li>
+          <li><a href="#">PROMOTIONS</a></li>
+          <li><a href="#">MORE</a></li>
+          <li><a href="#">CONTACT US</a></li>
+        </ul>
+
+        <div class="logo-right">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/IRCTC_Logo.svg/1200px-IRCTC_Logo.svg.png"
+            alt="IRCTC"
+          />
+        </div>
+      </nav>
+    </header>
+
+    <main class="hero-section">
+      <div class="bg-text">
+        <h1>INDIAN RAILWAYS</h1>
+        <p>Safety &nbsp;|&nbsp; Security &nbsp;|&nbsp; Punctuality</p>
+      </div>
+
+      <div class="booking-card">
+        <div class="card-header">
+          <div class="tab"><i class="fa fa-check-square"></i> PNR STATUS</div>
+          <div class="tab"><i class="fa fa-list-alt"></i> CHARTS / VACANCY</div>
+        </div>
+
+        <div class="booking-body">
+          <h2 class="booking-title">BOOK TICKET</h2>
+
+          <form id="bookingForm">
+            <div class="row">
+              <div class="input-group">
+                <i class="fa fa-location-arrow input-icon"></i>
+                <input
+                  type="text"
+                  id="fromInput"
+                  class="input-box"
+                  placeholder="From"
+                />
+              </div>
+
+              <div class="swap-icon" onclick="swapLocations()">
+                <i class="fa fa-exchange-alt"></i>
+              </div>
+
+              <div class="input-group">
+                <i class="fa fa-map-marker-alt input-icon"></i>
+                <input
+                  type="text"
+                  id="toInput"
+                  class="input-box"
+                  placeholder="To"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-group">
+                <i class="fa fa-calendar-alt input-icon"></i>
+                <input
+                  type="text"
+                  class="input-box"
+                  value="30/01/2026"
+                  placeholder="DD/MM/YYYY *"
+                />
+              </div>
+              <div class="input-group">
+                <i class="fa fa-briefcase input-icon"></i>
+                <select class="input-box" style="appearance: none">
+                  <option>All Classes</option>
+                  <option>Sleeper (SL)</option>
+                  <option>AC 3 Tier (3A)</option>
+                </select>
+                <i class="fa fa-chevron-down dropdown-arrow"></i>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-group full-width">
+                <i class="fa fa-th-large input-icon"></i>
+                <select class="input-box" style="appearance: none">
+                  <option>GENERAL</option>
+                  <option>LADIES</option>
+                  <option>TATKAL</option>
+                </select>
+                <i class="fa fa-chevron-down dropdown-arrow"></i>
+              </div>
+            </div>
+
+            <div class="options">
+              <div class="checkbox-group">
+                <input type="checkbox" id="disability" />
+                <label for="disability"
+                  >Person With Disability Concession</label
+                >
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="flexible" />
+                <label for="flexible">Flexible With Date</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="pass" />
+                <label for="pass">Railway Pass Concession</label>
+              </div>
+            </div>
+
+            <button type="button" class="search-btn" onclick="searchTrains()">
+              Search Trains
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <section class="services-container">
+      <div class="service-headings">
+        <h2>Have you not found the right one?</h2>
+        <h3>Find a service suitable for you here.</h3>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-plane"></i></div>
+          <span>FLIGHTS</span>
+        </div>
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-hotel"></i></div>
+          <span>HOTELS</span>
+        </div>
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-chart-line"></i></div>
+          <span>RAIL DRISHTI</span>
+        </div>
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-utensils"></i></div>
+          <span>E-CATERING</span>
+        </div>
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-bus"></i></div>
+          <span>BUS</span>
+        </div>
+
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-umbrella-beach"></i></div>
+          <span>HOLIDAY PACKAGES</span>
+        </div>
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-train"></i></div>
+          <span>TOURIST TRAIN</span>
+        </div>
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-mountain"></i></div>
+          <span>HILL RAILWAYS</span>
+        </div>
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-subway"></i></div>
+          <span>CHARTER TRAIN</span>
+        </div>
+        <div class="service-item">
+          <div class="icon-circle"><i class="fa fa-images"></i></div>
+          <span>GALLERY</span>
+        </div>
+      </div>
+
+      <div class="fraud-banner">
+        <div class="fraud-content">
+          <div class="fraud-logo">
+            <img
+              src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png"
+              alt="IRCTC"
+            />
+          </div>
+          <div class="fraud-text">
+            <h4>BEWARE OF FRAUDSTERS!</h4>
+            <p>
+              IRCTC does not share any
+              <span class="highlight-text"
+                >unsolicited links, APKs, SMS, or WhatsApp messages</span
+              >
+              for installing the
+              <strong>IRCTC Rail Connect Ticketing App.</strong> Always download
+              the official app only from Google Play Store or Apple App Store.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-placeholder">
+        <div class="ad-box">
+          <p>ADVERTISEMENT</p>
+          <div
+            style="
+              background: #4285f4;
+              height: 100px;
+              width: 100%;
+              margin-top: 5px;
+            "
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="chatbot">
+      <img
+        src="https://cdn.jsdelivr.net/gh/corover/assets@UIChange2/askdisha-bucket/FLauncher.gif"
+        alt="Ask Disha"
+      />
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="alertModal" class="modal">
+      <div class="modal-content-container">
+        <div class="modal-header-blue">Alert</div>
+
+        <div class="modal-inner-body">
+          <div class="modal-banner-row">
+            <img
+              src="https://contents.irctc.co.in/en/Web_alerts_700x90.jpeg"
+              alt="IRCTC Alert Banner"
+              class="banner-image"
+            />
+          </div>
+
+          <hr class="modal-divider" />
+
+          <div class="modal-text-content">
+            <p>
+              w.e.f 12 January 2026, only Aadhaar-authenticated users are
+              allowed to book general reserved tickets on the opening day of
+              Advance Reservation Period(ARP).
+            </p>
+            <p class="hindi-text">
+              12 जनवरी 2026 से अग्रिम आरक्षण अवधि (ARP) के आरंभिक दिन सामान्य
+              आरक्षित टिकटों की बुकिंग केवल आधार-प्रमाणित उपयोगकर्ताओं को ही
+              करने की अनुमति है।
+            </p>
+          </div>
+
+          <hr class="modal-divider" />
+
+          <div class="modal-footer">
+            <button id="closeModal" class="ok-btn">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

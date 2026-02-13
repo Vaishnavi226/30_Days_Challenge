@@ -1,0 +1,601 @@
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRCTC Hotels - Book Hotels Online</title>
+    <link rel="stylesheet" href="./day22.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <div class="logo-section">
+          <img src="./IRCTC-Preview.png" alt="IRCTC Logo" class="irctc-logo" />
+          <div class="logo-text">
+            <span class="main-title">Indian Railway Catering and</span>
+            <span class="main-title">Tourism Corporation Limited</span>
+            <span class="sub-title">A Government of India Enterprise</span>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="#" class="nav-link"
+            >User Registration <i class="fas fa-caret-down"></i
+          ></a>
+          <a href="#" class="nav-link"
+            >Contact Us <i class="fas fa-caret-down"></i
+          ></a>
+          <a href="#" class="nav-link">Login</a>
+        </nav>
+        <div class="air-logo">
+          <img
+            src="./IRCTC-Logo-Wiki-A.jpg"
+            alt="IRCTC Hotels"
+            style="filter: hue-rotate(180deg)"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Background -->
+    <section class="hero-section">
+      <img
+        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=600&fit=crop"
+        alt="Hotel Background"
+        class="hero-bg"
+      />
+
+      <!-- Promo Banner -->
+      <div class="pm-shri-banner">
+        <a href="#">Book Hotels & Get Up to 30% Off</a>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-container">
+        <div class="trip-options">
+          <button class="trip-btn active" id="domesticBtn">
+            Domestic Hotels
+          </button>
+          <button class="trip-btn" id="internationalBtn">
+            International Hotels
+          </button>
+          <div class="fare-options">
+            <label
+              ><input type="checkbox" name="premium" /> Premium Hotels</label
+            >
+            <label class="highlight"
+              ><input type="checkbox" name="govt" /> Government Tariff</label
+            >
+            <label><input type="checkbox" name="budget" /> Budget Hotels</label>
+          </div>
+        </div>
+
+        <div class="search-fields">
+          <div class="field-group wide">
+            <label>Destination</label>
+            <input type="text" placeholder="Enter City or Hotel Name" />
+          </div>
+          <div class="field-group">
+            <label>Check-in</label>
+            <input type="date" id="checkin" />
+          </div>
+          <div class="field-group">
+            <label>Check-out</label>
+            <input type="date" id="checkout" />
+          </div>
+          <div class="field-group">
+            <label>Rooms</label>
+            <select id="rooms">
+              <option>1 Room</option>
+              <option>2 Rooms</option>
+              <option>3 Rooms</option>
+              <option>4+ Rooms</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Guests</label>
+            <select id="guests">
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4+ Guests</option>
+            </select>
+          </div>
+          <button class="search-btn">
+            Search <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <p class="govt-warning">
+          Government employees can avail special tariffs at empanelled hotels.
+          Please select 'Government Tariff' option for exclusive rates.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Banner Slider -->
+    <section class="main-banner">
+      <div class="banner-slider">
+        <div class="banner-slide active">
+          <img
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=900&h=400&fit=crop"
+            alt="Luxury Hotels"
+          />
+        </div>
+        <div class="banner-slide">
+          <img
+            src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900&h=400&fit=crop"
+            alt="Beach Resorts"
+          />
+        </div>
+        <div class="banner-slide">
+          <img src="./beaches.jpeg" alt="Hill Station Hotels" />
+        </div>
+        <div class="banner-slide">
+          <img
+            src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&h=400&fit=crop"
+            alt="Heritage Hotels"
+          />
+        </div>
+        <div class="banner-slide">
+          <img
+            src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=900&h=400&fit=crop"
+            alt="Business Hotels"
+          />
+        </div>
+        <button class="slider-btn prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="slider-dots"></div>
+      </div>
+    </section>
+
+    <!-- Promo Cards -->
+    <section class="promo-cards">
+      <div class="promo-card">
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=280&h=180&fit=crop"
+          alt="5 Star Hotels"
+        />
+        <div class="card-content">
+          <h3>5 Star Luxury</h3>
+          <p>Experience world-class hospitality</p>
+        </div>
+      </div>
+      <div class="promo-card">
+        <img
+          src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=280&h=180&fit=crop"
+          alt="Budget Hotels"
+        />
+        <div class="card-content">
+          <h3>Budget Friendly</h3>
+          <p>Comfort at affordable prices</p>
+        </div>
+      </div>
+      <div class="promo-card">
+        <img src="./beaches.jpeg" alt="Beach Resorts" />
+        <div class="card-content">
+          <h3>Beach Resorts</h3>
+          <p>Relax by the seaside</p>
+        </div>
+      </div>
+      <div class="promo-card">
+        <img
+          src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=280&h=180&fit=crop"
+          alt="Hill Stations"
+        />
+        <div class="card-content">
+          <h3>Hill Stations</h3>
+          <p>Escape to the mountains</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Icons -->
+    <section class="services-section">
+      <div class="services-container">
+        <div class="service-item active">
+          <div class="service-icon"><i class="fas fa-hotel"></i></div>
+          <span>Hotels</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-plane"></i></div>
+          <span>Flights</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-bus"></i></div>
+          <span>Bus Tickets</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-bed"></i></div>
+          <span>Retiring Room</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <span>Lounge</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">
+            <i class="fas fa-suitcase-rolling"></i>
+          </div>
+          <span>Tour Packages</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-flag"></i></div>
+          <span>Bharat Gaurav</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-om"></i></div>
+          <span>Buddhist Train</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-crown"></i></div>
+          <span>Maharajas'</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-train"></i></div>
+          <span>Golden Chariot</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-ship"></i></div>
+          <span>Ferry</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-helicopter"></i></div>
+          <span>Heli Yatra</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-tag"></i></div>
+          <span>TAG</span>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-hiking"></i></div>
+          <span>Trek</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations-section">
+      <div class="destinations-container">
+        <h2>Popular Hotel Destinations</h2>
+        <div class="destinations-grid">
+          <div class="dest-card">
+            <img
+              src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=300&h=200&fit=crop"
+              alt="Delhi"
+            />
+            <div class="dest-info">
+              <h3>Delhi</h3>
+              <p>350+ Hotels</p>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img
+              src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=300&h=200&fit=crop"
+              alt="Mumbai"
+            />
+            <div class="dest-info">
+              <h3>Mumbai</h3>
+              <p>450+ Hotels</p>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img
+              src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=300&h=200&fit=crop"
+              alt="Goa"
+            />
+            <div class="dest-info">
+              <h3>Goa</h3>
+              <p>280+ Hotels</p>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img
+              src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=300&h=200&fit=crop"
+              alt="Jaipur"
+            />
+            <div class="dest-info">
+              <h3>Jaipur</h3>
+              <p>220+ Hotels</p>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img
+              src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=300&h=200&fit=crop"
+              alt="Bangalore"
+            />
+            <div class="dest-info">
+              <h3>Bangalore</h3>
+              <p>320+ Hotels</p>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img
+              src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=300&h=200&fit=crop"
+              alt="Agra"
+            />
+            <div class="dest-info">
+              <h3>Agra</h3>
+              <p>180+ Hotels</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do I book a hotel on IRCTC?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Enter your destination, check-in and check-out dates, select
+              number of rooms and guests, then search for available hotels and
+              complete your booking.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Can I get government rates for hotels?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Yes, government employees can avail special tariffs at empanelled
+              hotels by selecting the 'Government Tariff' option while booking.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What is the cancellation policy?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Cancellation policy varies by hotel. Please check the specific
+              hotel's cancellation terms before booking.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Are there any special discounts available?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Yes, we offer seasonal discounts, early bird offers, and special
+              rates for government employees and senior citizens.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do I modify my hotel booking?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Login to your account, go to 'My Bookings', select the reservation
+              you want to modify and follow the modification process.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What payment methods are accepted?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              We accept credit cards, debit cards, net banking, UPI, and digital
+              wallets for hotel bookings.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Can I book multiple rooms at once?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Yes, you can book multiple rooms in a single transaction by
+              selecting the number of rooms in the search form.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Is breakfast included in hotel bookings?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              It depends on the hotel and the room type you select. Check the
+              hotel details for meal inclusions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="app-section">
+      <div class="app-container">
+        <div class="phone-mockup">
+          <img
+            src="https://www.bus.irctc.co.in/assets/img/frame-2.png"
+            alt="Phone Frame"
+            class="phone-frame"
+          />
+          <img
+            src="https://www.bus.irctc.co.in/assets/img/app.png"
+            alt="App Screen"
+            class="phone-screen"
+          />
+        </div>
+        <div class="app-content">
+          <h2>Book Hotels on the Go</h2>
+          <p>Find and book hotels anywhere, anytime at your fingertips</p>
+          <div class="app-badges">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+              alt="App Store"
+            />
+          </div>
+          <div class="app-rating">
+            <span>4.3</span>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="qr-section">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.irctc.co.in"
+            alt="QR Code"
+          />
+          <p>Scan QR Code to<br />download the App</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">Tour Packages</a></li>
+            <li><a href="#">Retiring Rooms</a></li>
+            <li><a href="#">Lounge</a></li>
+            <li><a href="#">Ferry</a></li>
+            <li><a href="#">E-Catering</a></li>
+            <li><a href="#">E-Ticketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Popular Hotel Destinations</h3>
+          <ul>
+            <li><a href="#">Hotels in Delhi</a></li>
+            <li><a href="#">Hotels in Mumbai</a></li>
+            <li><a href="#">Hotels in Goa</a></li>
+            <li><a href="#">Hotels in Bangalore</a></li>
+            <li><a href="#">Hotels in Jaipur</a></li>
+            <li><a href="#">Hotels in Agra</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Hotel Categories</h3>
+          <ul>
+            <li><a href="#">5 Star Hotels</a></li>
+            <li><a href="#">4 Star Hotels</a></li>
+            <li><a href="#">3 Star Hotels</a></li>
+            <li><a href="#">Budget Hotels</a></li>
+            <li><a href="#">Beach Resorts</a></li>
+            <li><a href="#">Hill Station Hotels</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="useful-links">
+        <h3>Popular Hotel Searches</h3>
+        <div class="links-cloud">
+          <a href="#">Budget Hotels in Delhi</a>
+          <a href="#">Luxury Hotels in Mumbai</a>
+          <a href="#">Beach Resorts in Goa</a>
+          <a href="#">Heritage Hotels in Jaipur</a>
+          <a href="#">Business Hotels in Bangalore</a>
+          <a href="#">Hotels near Taj Mahal</a>
+          <a href="#">Hill Station Hotels in Shimla</a>
+          <a href="#">Hotels near Airport Delhi</a>
+          <a href="#">Family Hotels in Manali</a>
+          <a href="#">Honeymoon Resorts in Kerala</a>
+          <a href="#">Hotels in Udaipur</a>
+          <a href="#">Resorts in Lonavala</a>
+          <a href="#">Hotels in Rishikesh</a>
+          <a href="#">Beach Hotels in Pondicherry</a>
+          <a href="#">Hotels in Varanasi</a>
+          <a href="#">Luxury Resorts in Andaman</a>
+          <a href="#">Hotels in Darjeeling</a>
+          <a href="#">Palace Hotels in Rajasthan</a>
+          <a href="#">Hotels in Ooty</a>
+          <a href="#">Budget Hotels in Kolkata</a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="social-links">
+          <span>Get Connected with us on social networks</span>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tumblr"></i></a>
+          </div>
+        </div>
+        <div class="download-section">
+          <span>Book Hotels on the go. Download our mobile Apps</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="Google Play"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+            alt="App Store"
+          />
+        </div>
+        <div class="partners">
+          <span>Hotel Booking Partner</span>
+          <img
+            src="https://www.air.irctc.co.in/assets/img/irctc-logo.webp"
+            alt="IRCTC"
+            class="partner-logo"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <!-- Feedback Button -->
+    <div class="feedback-btn">
+      <span>Feedback</span>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+"

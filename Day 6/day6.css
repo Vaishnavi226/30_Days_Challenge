@@ -1,0 +1,37 @@
+body {
+  background-color: #f5f7fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.sidebar {
+  min-height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e5e5;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background-color: #f0f2ff;
+  color: #5a4ff3;
+}
+
+
+.card-stat {
+  border: none;
+  border-radius: 12px;
+}
+
+
+.profile-card {
+  background-color: #f0f2ff;
+  border-radius: 12px;
+}
