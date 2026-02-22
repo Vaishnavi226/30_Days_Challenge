@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f5f6;
+}
+
+/* Header */
+header {
+  background: white;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Carousel */
+.carousel-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.carousel-item {
+  width: 250px;
+  height: 150px;
+  background: linear-gradient(to top, #4b7bc4, #a0c4ff);
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.carousel-label {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Layout */
+.main-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Sidebar */
+.filter-box {
+  background: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+/* Package Card */
+.package-card {
+  background: white;
+  display: flex;
+  border: 1px solid #ddd;
+}
+
+.card-img {
+  width: 200px;
+  height: 180px;
+  background: #ccc;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-book {
+  background: orange;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-book:hover {
+  background: darkorange;
+}
+
+/* Footer */
+footer {
+  background: #002970;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
