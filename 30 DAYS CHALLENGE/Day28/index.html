@@ -1,84 +1,541 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRCTC Tourism Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === RESET & BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f5f6;
+            color: #333;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css" />
+        /* === HEADER === */
+        header {
+            background: #fff;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo img { height: 50px; }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 14px;
+        }
+        .nav-links i { margin-left: 5px; }
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
+        /* === TOP CAROUSEL === */
+        .carousel-container {
+            display: flex;
+            gap: 5px;
+            padding: 10px;
+            overflow-x: auto;
+            background: #fff;
+        }
+        .carousel-container::-webkit-scrollbar { display: none; }
+        .carousel-item {
+            min-width: 250px;
+            height: 150px;
+            background-color: #ccc;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            background-repeat: no-repeat;
+        }
+        /* Dummy background colors for carousel items */
+        .carousel-item:nth-child(1) { background: linear-gradient(to top, #4b7bc4, #a0c4ff); }
+        .carousel-item:nth-child(2) { background: linear-gradient(to top, #81a4e3, #c8d9f5); }
+        .carousel-item:nth-child(3) { background: linear-gradient(to top, #7d96c4, #e2e8f5); }
+        .carousel-item:nth-child(4) { background: #3b5998; color: white; align-items: center; text-align: center;}
+        
+        .carousel-label {
+            background: rgba(66, 103, 178, 0.85);
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 8px 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-  <body>
+        /* === MAIN LAYOUT === */
+        .main-container {
+            max-width: 1400px;
+            margin: 15px auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+            padding: 0 15px;
+        }
+
+        /* === SIDEBAR FILTERS === */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .filter-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .filter-header {
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        .filter-content { padding: 10px 15px; }
+        .checkbox-group {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .checkbox-group input { margin-right: 8px; }
+        
+        .emi-banner {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(to bottom, #ffd54f 50%, #283593 50%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 4px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        /* === PACKAGE LISTINGS === */
+        .sort-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .sort-options span { margin-right: 15px; cursor: pointer; }
+        .sort-options span.active { color: #2f3292; border-bottom: 2px solid #2f3292; }
+
+        .package-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            display: flex;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card-img {
+            width: 280px;
+            min-height: 180px;
+            background: #ccc; /* Placeholder for image */
+            position: relative;
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-body {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .card-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 12px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        .card-details-grid span { font-weight: bold; color: #000; }
+        
+        .inclusions {
+            font-size: 12px;
+            color: #2f3292;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: auto;
+        }
+        .inclusions i { margin-right: 4px; font-size: 14px; }
+
+        .card-pricing {
+            width: 180px;
+            border-left: 1px solid #eee;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+        }
+        .starting-from { font-size: 12px; color: #666; }
+        .price { font-size: 22px; font-weight: bold; color: #000; margin: 5px 0; }
+        .view-details { font-size: 12px; color: #0066cc; margin-bottom: 10px; text-decoration: none; }
+        .btn-book {
+            background-color: #fb8c00;
+            color: white;
+            border: none;
+            padding: 8px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-book:hover { background-color: #f57c00; }
+
+        /* Ad Banner between cards */
+        .middle-ad-banner {
+            width: 100%;
+            height: 60px;
+            background-color: #3f51b5;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background-color: #002970;
+            color: white;
+            padding: 40px;
+            margin-top: 40px;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            font-size: 12px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .footer-links a { color: #ccc; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #335599;
+            padding-top: 20px;
+            font-size: 12px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        .social-icons i {
+            background: #fff;
+            color: #002970;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
     <header>
-      <div class="logo">
-        <h2>IRCTC Tourism</h2>
-      </div>
-      <div class="nav-links">
-        <div>Contact Us <i class="fas fa-caret-down"></i></div>
-        <div>Login</div>
-        <div><i class="fas fa-bars"></i></div>
-      </div>
+        <div class="logo">
+            <h2>IRCTC Tourism</h2> 
+        </div>
+        <div class="nav-links">
+            <div>Contact Us <i class="fas fa-caret-down"></i></div>
+            <div>Login</div>
+            <div><i class="fas fa-bars"></i></div>
+        </div>
     </header>
 
-    <!-- Carousel -->
     <div class="carousel-container">
-      <div class="carousel-item">
-        <div class="carousel-label">Tourism Trending Packages</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-label">Trek Trending</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-label">Ferry Services</div>
-      </div>
+        <div class="carousel-item" style="background-image: url('https://www.irctctourism.co.in/package/Stand-Banners/Tourism-Tranding-Packages-8.webp'); background-size: cover; background-position: center;"><div class="carousel-label">Tourism Trending Packages</div></div>
+        <div class="carousel-item" style="background-image: url('https://www.irctctourism.co.in/package/Stand-Banners/trek-trendign.webp'); background-size: cover; background-position: center;"><div class="carousel-label">Trek Trending</div></div>
+        <div class="carousel-item" style="background-image: url('https://www.irctctourism.co.in/package/Stand-Banners/Ferry.webp'); background-size: cover; background-position: center;"><div class="carousel-label">Ferry Services</div></div>
+        <div class="carousel-item" style="background-image: url('https://www.irctctourism.co.in/package/Stand-Banners/IRCTC_Tourism_RBL-Update.webp'); background-size: cover; background-position: center;"><div class="carousel-label">IRCTC Tourism RBL</div></div>
+        <div class="carousel-item" style="background-image: url('https://www.irctctourism.co.in/package/Stand-Banners/Tourism-Tranding-Packages-3.webp'); background-size: cover; background-position: center;"><div class="carousel-label">Premium Packages</div></div>
     </div>
 
-    <!-- Main Content -->
     <div class="main-container">
-      <aside class="sidebar">
-        <div class="filter-box">
-          <div class="filter-header">
-            <i class="fas fa-sliders-h"></i> Filters
-          </div>
-          <div class="filter-content">
-            <label><input type="checkbox" /> Air Package</label><br />
-            <label><input type="checkbox" /> Land Package</label><br />
-            <label><input type="checkbox" /> Rail Tour</label>
-          </div>
-        </div>
-      </aside>
-
-      <main class="package-list">
-        <div class="package-card">
-          <div class="card-img"></div>
-
-          <div class="card-body">
-            <div class="card-title">DIVYA MAA KAMAKHYA DARSHAN TOUR</div>
-
-            <div class="card-details">
-              Duration: 1 Night/2 Days <br />
-              Origin: Guwahati <br />
-              Destination: Kamakhya
+        
+        <aside class="sidebar">
+            <div class="filter-box">
+                <div class="filter-header">
+                    <i class="fas fa-sliders-h"></i> Filters By Package Type <i class="fas fa-minus"></i>
+                </div>
+                <div class="filter-content">
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Air Package</label> <span>(143)</span>
+                    </div>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Land Package</label> <span>(76)</span>
+                    </div>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Rail Tour Package</label> <span>(106)</span>
+                    </div>
+                </div>
             </div>
 
-            <button class="btn-book">Book Now</button>
-          </div>
-        </div>
-      </main>
+            <div class="filter-box">
+                <div class="filter-header"><i class="fas fa-th-large"></i> Category <i class="fas fa-plus"></i></div>
+            </div>
+            <div class="filter-box">
+                <div class="filter-header"><i class="fas fa-map-marker-alt"></i> Origin <i class="fas fa-plus"></i></div>
+            </div>
+            <div class="filter-box">
+                <div class="filter-header"><i class="fas fa-map-marker-alt"></i> Destination <i class="fas fa-plus"></i></div>
+            </div>
+
+            <div style="width: 100%; height: 250px; background-image: url('https://www.irctctourism.com/assets/img/LeftAdd.jpg'); background-size: cover; background-position: center; border-radius: 4px;"></div>
+        </aside>
+
+        <main class="package-list">
+            
+            <div class="sort-bar">
+                <div class="sort-options">
+                    Sort By: <span>Name</span> <span>Price</span>
+                </div>
+                <div>Total Packages: 51</div>
+            </div>
+
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://www.irctctourism.com/packageImage/EGH044/EGH044.jpg" alt="Divya Maa Kamakhya Darshan Tour">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">DIVYA MAA KAMAKHYA DARSHAN TOUR EX-GUWAHATI</div>
+                    <div class="card-details-grid">
+                        <div>Duration: <span>1 Night/2 Days</span></div>
+                        <div>Package Code: <span>EGH044</span></div>
+                        <div>Origin: <span>Guwahati</span></div>
+                        <div>Destination: <span>Kamakhya</span></div>
+                        <div>Departure: <span>Daily</span></div>
+                        <div>Upcoming Date Of Journey: <span>22-FEB-26</span></div>
+                    </div>
+                    <div class="inclusions">
+                        Inclusions: 
+                        <span><i class="fas fa-car"></i> Cab</span>
+                        <span><i class="fas fa-bus"></i> Bus</span>
+                        <span><i class="fas fa-hotel"></i> Hotel</span>
+                        <span><i class="fas fa-utensils"></i> Meal</span>
+                        <span><i class="fas fa-shield-alt"></i> Insurance</span>
+                    </div>
+                </div>
+                <div class="card-pricing">
+                    <span class="starting-from">Starting from</span>
+                    <span class="price">₹ 7000</span>
+                    <a href="#" class="view-details">View Details</a>
+                    <button class="btn-book">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://www.irctctourism.com/packageImage/WAH11/WAH11.jpg" alt="Dwarka Bet Dwarka-Somnath Tour">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">DWARKA BET DWARKA-SOMNATH WITH SASAN GIR EX RAJKOT</div>
+                    <div class="card-details-grid">
+                        <div>Duration: <span>4 Nights/5 Days</span></div>
+                        <div>Package Code: <span>WAH11</span></div>
+                        <div>Origin: <span>Rajkot</span></div>
+                        <div>Destination: <span>Dwarka / Nageshwar / Porbandar...</span></div>
+                        <div>Departure: <span>Daily</span></div>
+                        <div>Upcoming Date Of Journey: <span>25-FEB-26</span></div>
+                    </div>
+                    <div class="inclusions">
+                        Inclusions: 
+                        <span><i class="fas fa-car"></i> Cab</span>
+                        <span><i class="fas fa-bus"></i> Bus</span>
+                        <span><i class="fas fa-hotel"></i> Hotel</span>
+                        <span><i class="fas fa-utensils"></i> Meal</span>
+                    </div>
+                </div>
+                <div class="card-pricing">
+                    <span class="starting-from">Starting from</span>
+                    <span class="price">₹ 20600</span>
+                    <a href="#" class="view-details">View Details</a>
+                    <button class="btn-book">Book Now</button>
+                </div>
+            </div>
+
+            <div style="width: 100%; height: 90px; background-image: url('https://www.irctctourism.co.in/package/UAT-Images/970---90.webp'); background-size: cover; background-position: center; border-radius: 4px; margin-bottom: 15px;"></div>
+
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://www.irctctourism.com/packageImage/EHH124/EHH124.jpg" alt="Sikkim Platinum Tour">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">SIKKIM PLATINUM</div>
+                    <div class="card-details-grid">
+                        <div>Duration: <span>7 Nights/8 Days</span></div>
+                        <div>Package Code: <span>EHH124</span></div>
+                        <div>Origin: <span>Bagdogra / New Jalpaiguri</span></div>
+                        <div>Destination: <span>Darjeeling / Gangtok / Kalimpong...</span></div>
+                        <div>Departure: <span>Daily</span></div>
+                        <div>Upcoming Date Of Journey: <span>25-FEB-26</span></div>
+                    </div>
+                    <div class="inclusions">
+                        Inclusions: 
+                        <span><i class="fas fa-bus"></i> Bus</span>
+                        <span><i class="fas fa-hotel"></i> Hotel</span>
+                        <span><i class="fas fa-utensils"></i> Meal</span>
+                        <span><i class="fas fa-shield-alt"></i> Insurance</span>
+                    </div>
+                </div>
+                <div class="card-pricing">
+                    <span class="starting-from">Starting from</span>
+                    <span class="price">₹ 33820</span>
+                    <a href="#" class="view-details">View Details</a>
+                    <button class="btn-book">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://www.irctctourism.com/packageImage/NDR045/NDR045.jpg" alt="NEW DELHI-AMRITSAR">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">NEW DELHI-AMRITSAR</div>
+                    <div class="card-details-grid">
+                        <div>Duration: <span>1 Night/2 Days</span></div>
+                        <div>Package Code: <span>NDR045</span></div>
+                        <div>Origin: <span>Delhi</span></div>
+                        <div>Destination: <span>Amritsar</span></div>
+                        <div>Departure: <span>Every Friday & Saturday</span></div>
+                        <div>Upcoming Date Of Journey: <span>27-FEB-26</span></div>
+                    </div>
+                    <div class="inclusions">
+                        Inclusions: 
+                        <span><i class="fas fa-train"></i> Train</span>
+                        <span><i class="fas fa-car"></i> Cab</span>
+                        <span><i class="fas fa-hotel"></i> Hotel</span>
+                        <span><i class="fas fa-utensils"></i> Meal</span>
+                    </div>
+                </div>
+                <div class="card-pricing">
+                    <span class="starting-from">Starting from</span>
+                    <span class="price">₹ 8160</span>
+                    <a href="#" class="view-details">View Details</a>
+                    <button class="btn-book">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="card-img">
+                    <img src="https://www.irctctourism.com/packageImage/WAH05B/WAH05B.jpg" alt="CHANDIGARH TO RAJASTHAN">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">CHANDIGARH TO RAJASTHAN</div>
+                    <div class="card-details-grid">
+                        <div>Duration: <span>7 Nights/8 Days</span></div>
+                        <div>Package Code: <span>WAH05B</span></div>
+                        <div>Origin: <span>Chandigarh</span></div>
+                        <div>Destination: <span>Abu Road / Udaipur / Jodhpur / Ajmer</span></div>
+                        <div>Departure: <span>Every Friday</span></div>
+                        <div>Upcoming Date Of Journey: <span>27-FEB-26</span></div>
+                    </div>
+                    <div class="inclusions">
+                        Inclusions: 
+                        <span><i class="fas fa-train"></i> Train</span>
+                        <span><i class="fas fa-car"></i> Cab</span>
+                        <span><i class="fas fa-hotel"></i> Hotel</span>
+                        <span><i class="fas fa-utensils"></i> Meal</span>
+                    </div>
+                </div>
+                <div class="card-pricing">
+                    <span class="starting-from">Starting from</span>
+                    <span class="price">₹ 21895</span>
+                    <a href="#" class="view-details">View Details</a>
+                    <button class="btn-book">Book Now</button>
+                </div>
+            </div>
+
+        </main>
     </div>
 
     <footer>
-      <p>© 2026 IRCTC | All Rights Reserved</p>
+        <div class="footer-links">
+            <a href="#">• Best Railway Journeys</a>
+            <a href="#">• Shirdi Darshan Package</a>
+            <a href="#">• Holiday Packages From Delhi To Manali</a>
+            <a href="#">• Holy Ganga Darshan Tour</a>
+            <a href="#">• Online Package Booking</a>
+            <a href="#">• Rameswaram Tour Packages</a>
+            <a href="#">• All India Tour Packages</a>
+            <a href="#">• Aastha Tour Package</a>
+            <a href="#">• Irctc Train Travel Services</a>
+            <a href="#">• Vaishno Devi Package</a>
+            <a href="#">• Rameswaram Kanniyakumari Package</a>
+            <a href="#">• Affordable Irctc Travel Services</a>
+            <a href="#">• Classical Khajuraho Tour</a>
+            <a href="#">• Holiday Deals</a>
+            <a href="#">• Irctc August Travel Packages</a>
+            <a href="#">• Irctc Travel Solutions</a>
+            <a href="#">• Holy Land Packages</a>
+            <a href="#">• Ooty Holiday Trip</a>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2026 IRCTC | All Right Reserved.</div>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-telegram-plane"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+            <div>
+                <span style="font-size: 18px; font-weight: bold;">Incredible India</span>
+            </div>
+        </div>
     </footer>
 
-    <!-- External JS -->
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
